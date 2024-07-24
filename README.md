@@ -30,7 +30,9 @@ to learn the language first before starting the project (Annie and Jonathan, pro
 was only possible for us because they decided to learn python during Thanksgiving break. The
 python libraries that we imported within our project include the following:
 ● socket
+
 ● time
+
 ● select
 ● sys
 ● os
