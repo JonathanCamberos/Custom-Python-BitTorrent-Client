@@ -1,0 +1,101 @@
+
+
+Flowchart for out Bittorrent Client
+Notes: 
+    Edit ---> asking if we should add an extra piece or modify here
+
+Set-up 
+
+    1. Talk to tracker
+        i) tracker = Tracker(args.torrent)
+    
+    2. Get List of Peers
+        i) Peers = get_peers_list()
+
+            z) try --->  peers = tracker.get_list_of_peers()
+                a) send_http_request()  
+                b) recv response from tracker 
+
+            zz) except (if error)  ---> peers = tracker.get_list_of_peers_compact() 
+                a) send_http_request()
+                b) recv response from tracker
+    3. Print peers (sanity check)
+        i) for p in peers: print(p)
+    
+    4. Set-up global variables
+        i) num_pieces
+        ii) my_bitfield
+        iii) last_piece_size
+        iv) start_global_dictionary_and_file()
+
+
+Initialize Connections 
+
+    1. Initalize_client_state_list()
+        i) for p in peers:
+            
+            z) create socket connection == success
+                a) test handshake -->   
+
+                    Edit: (Timer to send/recv handshake under?)
+
+                    if send_recv_handshake() == true
+                        set new socket ---> new peer
+                        add peer ---> client_state_list
+                        add peer ---> socket Read List
+                    else 
+                        ignore peer
+
+            zz) socket error
+                ignore peer
+    
+    result:
+        client_State_list
+            peers -> handshake complete
+                  -> (optional) bitfield, will recv in big while loop
+        read_list
+            list  -> sockets
+
+
+Our current While Loop
+
+    
+
+
+
+
+
+
+
+
+While Loop 
+
+    1. (We) Send Handshake/Recv Handshake Response 
+        i) send_recv_handshake()
+            z) Sends Handshake request
+            
+            zz) If Handshake response < timer 
+        
+        ii) Optional (Bitfield Message from Client)
+            a) Recv on peer socket --> big while loop
+                z) If peer.Handshake_complete != 1
+                    peer.Handshake_complete = 1
+                    save new bitfield, send back bitfield response
+                zz) If peer.Handshake_complete == 1
+                    save new bitfield
+
+        iii) Request Pieces from Client
+
+
+Initial Connection (Peer() -> Our Client)
+
+    1. Big while loop -> We detect a read on our client socket
+        i) recv_handshake_from_initiator()
+            Read Handshake from peer, send Handshake response, send our bitfield
+            set Handshake complete = 1
+
+        ii) Optional (Bitfield Message from Client)
+            if Handshake_complete == 1
+                save new bitfield, do not send back response
+
+        ii)

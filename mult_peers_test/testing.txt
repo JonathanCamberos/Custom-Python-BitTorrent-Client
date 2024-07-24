@@ -1,0 +1,8 @@
+npm install -g bittorrent-tracker
+bittorrent-tracker --http
+
+python3 bittorrent_client_has_the_file.py --torrent pg201.txt.torrent
+
+python3 bittorrent_client.py --torrent pg201.txt.torrent --down_path file1.txt
+
+python3 bittorrent_client.py --torrent pg201.txt.torrent --down_path file2.txt

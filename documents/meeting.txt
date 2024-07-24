@@ -1,0 +1,29 @@
+Tracker:
+    get_list_of_peers_compact() -- SAAR
+
+Peer: -- SADIA
+	compare_bitfields(a, b)
+	request_piece()
+	update_peer_bitfield()
+	handle_request_piece(piece_idx) // send the piece itself, read the piece from the file
+	send_statement(id) // for (un)choke and (not)intersted
+	send_have()
+	send_bitfield()
+
+FS: -- JONATHAN
+	recv_block(idx, begin, block) // writes to piece into the file
+	fill_up_piece() // uses a global var of dictionary of all pieces
+	check_piece_hash()
+	write_piece_to_file(piece_idx)
+
+ConnectionMgmt: -- ANNIE
+	main() // deMux
+	send_handshake_back()
+	send_keep_alive()
+	send_revc_handshake()
+	check_peer_list() // check if the # of peers is under the threshold
+
+
+Piece Selection Algorithm: -- ANNIE
+   == strict policy
+
