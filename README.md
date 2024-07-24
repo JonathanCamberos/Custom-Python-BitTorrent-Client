@@ -1,4 +1,4 @@
-# UMD BitCamp Hackathon Custom-Python-BitTorrent-Client
+# UMD BitCamp Hackathon Custom Python BitTorrent Client
 
 BitTorrent Summary
 
