@@ -29,7 +29,8 @@ BitTorrent Summary
 
 Group Members: Annie Zhou, Jonathan Camberos, Sadia Nourin, Saar Cohen
 
-Supported Features
+Supported Features:
+
 ● Communicate with the tracker (with support for compact format):
 ○ We are able to talk to the tracker given a torrent file and can do so in both normal
 and compact mode.
