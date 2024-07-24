@@ -1,35 +1,10 @@
 # UMD BitCamp Hackathon Custom Python BitTorrent Client
 
-BitTorrent Summary
+**BitTorrent Summary**
 
 Group Members: Annie Zhou, Jonathan Camberos, Sadia Nourin, Saar Cohen
 
-Supported Features
-● Communicate with the tracker (with support for compact format):
-○ We are able to talk to the tracker given a torrent file and can do so in both normal
-and compact mode.
-
-● Download a file from official Bittorrent Client:
-○ We can download both the flatland and the debian files using the torrents
-provided on the web. The flatland file is downloaded perfectly, and we are able to
-download all of the debian file except for the last piece.
-
-● Download a file from other instances of clients:
-○ We hosted our own tracker and had one of our clients as a designated seeder for
-the flatland file. We had five other clients as leechers and all five clients were
-able to download the file successfully.
-
-● UDP tracker support:
-○ We were able to implement one of the extra credit features and are able to talk to
-the tracker via UDP.
-
-Design and Implementation Choices
-We implemented our bittorrent client in python because we had two people on our team (Sadia
-BitTorrent Summary
-
-Group Members: Annie Zhou, Jonathan Camberos, Sadia Nourin, Saar Cohen
-
-Supported Features:
+**Supported Features:**
 
 ● Communicate with the tracker (with support for compact format):
 ○ We are able to talk to the tracker given a torrent file and can do so in both normal
