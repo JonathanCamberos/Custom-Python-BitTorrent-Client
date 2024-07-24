@@ -5,21 +5,21 @@ BitTorrent Summary
 Group Members: Annie Zhou, Jonathan Camberos, Sadia Nourin, Saar Cohen
 
 Supported Features
-, Communicate with the tracker (with support for compact format):
+● Communicate with the tracker (with support for compact format):
 ○ We are able to talk to the tracker given a torrent file and can do so in both normal
 and compact mode.
 
-, Download a file from official Bittorrent Client:
+● Download a file from official Bittorrent Client:
 ○ We can download both the flatland and the debian files using the torrents
 provided on the web. The flatland file is downloaded perfectly, and we are able to
 download all of the debian file except for the last piece.
 
-, Download a file from other instances of clients:
+● Download a file from other instances of clients:
 ○ We hosted our own tracker and had one of our clients as a designated seeder for
 the flatland file. We had five other clients as leechers and all five clients were
 able to download the file successfully.
 
-, UDP tracker support:
+● UDP tracker support:
 ○ We were able to implement one of the extra credit features and are able to talk to
 the tracker via UDP.
 
@@ -30,21 +30,21 @@ BitTorrent Summary
 Group Members: Annie Zhou, Jonathan Camberos, Sadia Nourin, Saar Cohen
 
 Supported Features
-, Communicate with the tracker (with support for compact format):
+● Communicate with the tracker (with support for compact format):
 ○ We are able to talk to the tracker given a torrent file and can do so in both normal
 and compact mode.
 
-, Download a file from official Bittorrent Client:
+● Download a file from official Bittorrent Client:
 ○ We can download both the flatland and the debian files using the torrents
 provided on the web. The flatland file is downloaded perfectly, and we are able to
 download all of the debian file except for the last piece.
 
-, Download a file from other instances of clients:
+● Download a file from other instances of clients:
 ○ We hosted our own tracker and had one of our clients as a designated seeder for
 the flatland file. We had five other clients as leechers and all five clients were
 able to download the file successfully.
 
-, UDP tracker support:
+● UDP tracker support:
 ○ We were able to implement one of the extra credit features and are able to talk to
 the tracker via UDP.
 
@@ -54,25 +54,9 @@ and Saar) for which that was the most comfortable language while the other two p
 to learn the language first before starting the project (Annie and Jonathan, props to them!). This
 was only possible for us because they decided to learn python during Thanksgiving break. The
 python libraries that we imported within our project include the following:
-, socket
-, time
-, select
-, sys
-, os
-, re
-, io
-, os.path
-, struct
-, codecs
-, bencode
-, Hashlib
 
-, math
-, urllib.parse
-, argparse
-, random
-, datetime
-, collections
+● socket, time, select, sys, os, re, io, os.path, struct, codecs, bencode, Hashlib, math, urllib.parse, argparse, random, datetime, collections
+
 Tracker.py: We decided to implement our Tracker as a separate class in python for
 organization purposes (it helps so that the main file is not cluttered). The Tracker class has the
 necessary methods to read from the .torrent file provided, and has methods and attributes that
@@ -155,9 +139,8 @@ the slowest downloader.
 
 Problems We Encountered
 Some of the major problems that we encountered include:
-, File Modification Mode from Seeder and Leecher
-, Bitfield Conversion
-, Download Speed
+● File Modification Mode from Seeder and Leecher, Bitfield Conversion, Download Speed
+
 File Modification Mode from Seeder and Leecher: One frustrating problem that we ran into is
 that when we had one of our clients act as a seeder while other instances of our client were
 acting as leechers when hosting our own tracker, we noticed that the file that the leechers
@@ -196,8 +179,7 @@ that, we were able to reduce our speed to approximately 1-2 minutes.
 
 Known Bugs/Issues
 Some known bugs/issues that still exist in our implementation include:
-, Debian File Last Piece Download
-, Broken Pipe Error
+● Debian File Last Piece Download, Broken Pipe Error
 Debian File Last Piece Download: While testing the torrenting capabilities of our BitTorrent
 Client with the debian torrent files, a recurring issue is that when our client requests the last
 piece from a peer, that peer sends back in response, a block of the correct length in null bytes
